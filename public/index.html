@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumen Cart</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="logo">Lumen Cart</div>
+        <div class="nav-actions">
+          <button class="ghost">Seller Mode</button>
+          <button class="solid">Preview Store</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Minimal commerce workspace</p>
+          <h1>Sell beautifully. Ship confidently. Manage payouts in one place.</h1>
+          <p class="subhead">
+            Curate a storefront that feels premium and effortless. Add products in seconds and
+            configure who pays whom with clarity.
+          </p>
+          <div class="hero-cta">
+            <button class="solid">Start a drop</button>
+            <button class="ghost">View walkthrough</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Today</h3>
+          <p class="metric">$48,920</p>
+          <p class="caption">Projected revenue</p>
+          <div class="hero-card-grid">
+            <div>
+              <p class="label">Orders</p>
+              <p class="value">312</p>
+            </div>
+            <div>
+              <p class="label">Payouts</p>
+              <p class="value">7</p>
+            </div>
+            <div>
+              <p class="label">Returns</p>
+              <p class="value">1.2%</p>
+            </div>
+            <div>
+              <p class="label">Avg. cart</p>
+              <p class="value">$152</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Mock products</p>
+            <h2>Signature collection</h2>
+          </div>
+          <div class="filters">
+            <button class="ghost">All</button>
+            <button class="ghost">New</button>
+            <button class="ghost">Pre-order</button>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="section split">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Seller tools</p>
+              <h2>Add new products</h2>
+              <p class="subhead">
+                Drop in a new item with a single form. Products appear instantly in your grid.
+              </p>
+            </div>
+            <div class="badge">Live</div>
+          </div>
+          <form id="addProductForm" class="form">
+            <div class="form-row">
+              <label>
+                Product name
+                <input type="text" name="name" placeholder="Aurora Wireless Charger" required />
+              </label>
+              <label>
+                Category
+                <input type="text" name="category" placeholder="Accessories" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Price (USD)
+                <input type="number" name="price" min="10" step="1" placeholder="199" required />
+              </label>
+              <label>
+                Inventory status
+                <select name="status" required>
+                  <option value="In stock">In stock</option>
+                  <option value="Pre-order">Pre-order</option>
+                  <option value="Limited">Limited</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Highlight
+              <input
+                type="text"
+                name="highlight"
+                placeholder="Made from recycled aluminum"
+                required
+              />
+            </label>
+            <button type="submit" class="solid full">Add product</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Payments</p>
+              <h2>Set who pays whom</h2>
+              <p class="subhead">
+                Configure payout direction per transaction so every partner knows exactly what to
+                expect.
+              </p>
+            </div>
+          </div>
+          <form id="paymentForm" class="form">
+            <div class="form-row">
+              <label>
+                Payer
+                <select name="payer">
+                  <option>Customer</option>
+                  <option>Marketplace</option>
+                  <option>Retail Partner</option>
+                  <option>Influencer</option>
+                </select>
+              </label>
+              <label>
+                Payee
+                <select name="payee">
+                  <option>Seller</option>
+                  <option>Supplier</option>
+                  <option>Logistics</option>
+                  <option>Creator</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Split method
+                <select name="method">
+                  <option value="Instant">Instant payout</option>
+                  <option value="Scheduled">Scheduled weekly</option>
+                  <option value="Escrow">Escrow release</option>
+                </select>
+              </label>
+              <label>
+                Notes
+                <input type="text" name="notes" placeholder="Net 7 on delivery" />
+              </label>
+            </div>
+            <button type="submit" class="solid full">Save payout rule</button>
+          </form>
+          <div class="payment-output" id="paymentOutput">
+            <p class="label">Current payout rule</p>
+            <p class="value">Customer → Seller · Instant payout</p>
+            <p class="caption">Net 0</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h3>Ready to launch?</h3>
+        <p class="caption">Connect payments, invite collaborators, and ship your first order.</p>
+      </div>
+      <button class="solid">Create your store</button>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
